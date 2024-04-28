@@ -21,13 +21,14 @@ function Sidebar({
   return (
     <Flex
       bg="layout.0"
-      w={isOpen ? "250px" : "70px"}
+      w={isOpen ? "350px" : "70px"}
       minH="100vh"
       p="4"
       flexDirection="column"
       justifyContent="space-between"
       zIndex="1000"
       transition="width 0.3s ease-in-out"
+      boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
     >
       <div>
         <Logo isCollapsed={!isOpen} />
@@ -36,18 +37,26 @@ function Sidebar({
             icon={HiOutlineDocumentReport}
             label="Dashboard"
             isCollapsed={isOpen}
+            route="/dashboard"
           />
           <NavItem
             icon={MdOutlineEventNote}
             label="Budget Planner"
             isCollapsed={isOpen}
+            route="/budget-planner"
           />
           <NavItem
             icon={FaMoneyBill1Wave}
             label="Expenses"
             isCollapsed={isOpen}
+            route="/expenses"
           />
-          <NavItem icon={MdSettings} label="Settings" isCollapsed={isOpen} />
+          <NavItem
+            icon={MdSettings}
+            label="Settings"
+            isCollapsed={isOpen}
+            route="/settings"
+          />
         </VStack>
       </div>
       <SidebarToggle isOpen={isOpen} onClose={onClose} />

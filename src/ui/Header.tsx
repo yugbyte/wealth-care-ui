@@ -12,9 +12,11 @@ function Header() {
       position="fixed"
     >
       <IconButton
-        fontSize={25}
-        colorScheme="primary"
+        isRound={true}
+        size="sm"
         aria-label="mode"
+        fontSize="25px"
+        color={"yellow.500"}
         icon={<LuSunMedium />}
       />
     </Flex>

@@ -2,6 +2,7 @@ import { Box, Flex, Grid, GridItem } from "@chakra-ui/react";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
+import { Outlet } from "react-router-dom";
 
 function Layout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -12,8 +13,10 @@ function Layout() {
     <Flex bg="gray.100">
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
       <Header />
-      <Flex marginTop={65} marginLeft={5}>
-        <Box width={"100%"} overflowY="auto"></Box>
+      <Flex marginTop={95} marginLeft={5} marginRight={15} width="100%">
+        <Box width="100%" overflowY="auto">
+          <Outlet />
+        </Box>
       </Flex>
     </Flex>
   );
