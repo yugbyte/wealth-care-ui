@@ -1,8 +1,8 @@
-import { Flex, Grid } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 
 function Content({ children }: { children: React.ReactNode }) {
   return (
-    <Grid marginTop={55} templateColumns="repeat(5, 1fr)" gap={6}>
+    <Grid marginTop={55} templateColumns="repeat(6, 1fr)" gap={3}>
       {children}
     </Grid>
   );

@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import { buttonTheme } from "./ButtonTheme";
 
 const theme = extendTheme({
   colors: {
@@ -67,8 +68,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    body: "Poppins, sans-serif",
-    heading: "Roboto, sans-serif",
+    body: "Roboto, sans-serif",
+    heading: "Poppins, sans-serif",
   },
   fontWeights: {
     logo: 800,
@@ -78,12 +79,15 @@ const theme = extendTheme({
   },
   letterSpacings: {
     tighter: "-0.05em", // Tighter letter spacing
-    normal: "0.03em", // Normal letter spacing
+    normal: "0.01em", // Normal letter spacing
     wider: "0.08em", // Wider letter spacing
   },
   config: {
     initialColorMode: "dark",
     useSystemColorMode: false,
+  },
+  components: {
+    Button: buttonTheme,
   },
 });
 

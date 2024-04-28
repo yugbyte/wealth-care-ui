@@ -39,12 +39,13 @@ function NavItem({
           as={icon}
           fontSize={24}
           mr="2"
+          fontWeight={!isActive ? "normal" : "bold"}
           color={!isActive ? "gray.500" : "brand.500"}
         />
 
         <Text
           fontSize={18}
-          fontWeight={400}
+          fontWeight={!isActive ? "normal" : "500"}
           fontFamily={"Roboto, sans-serif"}
           marginLeft={isCollapsed ? "0.5rem" : "0rem"}
           opacity={isCollapsed ? 100 : 0}

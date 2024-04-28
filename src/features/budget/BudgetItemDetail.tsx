@@ -1,7 +1,6 @@
 import {
   Avatar,
   Box,
-  Container,
   Flex,
   HStack,
   Heading,
@@ -9,6 +8,7 @@ import {
   Spacer,
   Tag,
   Text,
+  Tooltip,
   Wrap,
 } from "@chakra-ui/react";
 import { MdEventRepeat } from "react-icons/md";
@@ -30,15 +30,17 @@ function BudgetItemDetail({
             <Wrap>
               {budget.category}
               {budget.isRecurring && (
-                <Flex fontSize="13" color="red.300">
-                  <MdEventRepeat />
-                </Flex>
+                <Tooltip label="Recurring Payment">
+                  <Flex fontSize="13" color="red.300">
+                    <MdEventRepeat />
+                  </Flex>
+                </Tooltip>
               )}
             </Wrap>
           </Heading>
           <Text fontWeight="normal">
             Max Limit: <span>{budget.currency}</span>
-            <span>{budget.amount}</span>
+            <span style={{ marginLeft: "4px" }}>{budget.amount}</span>
           </Text>
           <HStack spacing={4}>
             {budget.tags.map((item) => (
@@ -46,7 +48,7 @@ function BudgetItemDetail({
                 size="sm"
                 key={item}
                 variant="solid"
-                backgroundColor={"gray.300"}
+                backgroundColor={"grey.300"}
               >
                 {item}
               </Tag>

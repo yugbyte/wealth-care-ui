@@ -1,6 +1,6 @@
 import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
 import "./App.css";
-import theme from "./theme";
+import theme from "./themes/theme";
 import Layout from "./ui/Layout";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";

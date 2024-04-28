@@ -19,7 +19,7 @@ function SidebarToggle({
             display={"block"}
             fontSize={"20"}
             size="8xl"
-            colorScheme="primary"
+            color="brand.400"
             aria-label="Toggle Sidebar"
             icon={<TbLayoutSidebarRightCollapseFilled />}
             variant="ghost"
@@ -34,7 +34,7 @@ function SidebarToggle({
             display={"block"}
             fontSize={"20"}
             size="8xl"
-            colorScheme="primary"
+            color="brand.400"
             aria-label="Toggle Sidebar"
             icon={<TbLayoutSidebarLeftCollapseFilled />}
             variant="ghost"
