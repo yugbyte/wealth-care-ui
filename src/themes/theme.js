@@ -68,7 +68,7 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    body: "Roboto, sans-serif",
+    body: "DM Sans, sans-serif",
     heading: "Poppins, sans-serif",
   },
   fontWeights: {
