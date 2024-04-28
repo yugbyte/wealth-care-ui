@@ -1,18 +1,21 @@
 import { Center, Flex, Image, Text } from "@chakra-ui/react";
+import { MdDiamond } from "react-icons/md";
 
 function Logo({ isCollapsed }: { isCollapsed: boolean }) {
   return (
     <Center w="full" marginBottom={25}>
       <Flex flexDirection="column">
-        <Image
-          boxSize={isCollapsed ? "45px" : "100px"}
-          marginBottom="15px"
-          marginLeft={isCollapsed ? 0 : 5}
-          src="../../public/1.png"
-          transition="boxSize 0.3s ease-in-out"
-        ></Image>
+        <Center fontSize={100} color="brand.600">
+          <MdDiamond />
+        </Center>
+
         {!isCollapsed && (
-          <Text fontFamily={"Caveat"} fontSize={35} fontWeight={800}>
+          <Text
+            fontFamily={"Caveat"}
+            fontSize={35}
+            fontWeight={800}
+            color="brand.500"
+          >
             Wealth Care
           </Text>
         )}

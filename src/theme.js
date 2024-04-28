@@ -2,6 +2,17 @@ import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   colors: {
+    brand: {
+      100: "#E9E3FF",
+      200: "#422AFB",
+      300: "#422AFB",
+      400: "#7551FF",
+      500: "#422AFB",
+      600: "#3311DB",
+      700: "#02044A",
+      800: "#190793",
+      900: "#11047A",
+    },
     layout: {
       0: "#fff",
       100: "RGBA(0, 0, 0, 0.06)",
@@ -42,10 +53,33 @@ const theme = extendTheme({
       800: "#393939",
       900: "#1F1F1F",
     },
+    warning: {
+      50: "#FCE8E8",
+      100: "#F7BFBF",
+      200: "#F29696",
+      300: "#ED6D6D",
+      400: "#E94444",
+      500: "#E41B1B",
+      600: "#B61616",
+      700: "#891010",
+      800: "#5B0B0B",
+      900: "#2E0505",
+    },
   },
   fonts: {
     body: "Poppins, sans-serif",
-    heading: "Poppins, sans-serif",
+    heading: "Roboto, sans-serif",
+  },
+  fontWeights: {
+    logo: 800,
+    normal: 300, // Default font weight
+    medium: 500, // Medium font weight
+    bold: 700, // Bold font weight
+  },
+  letterSpacings: {
+    tighter: "-0.05em", // Tighter letter spacing
+    normal: "0.03em", // Normal letter spacing
+    wider: "0.08em", // Wider letter spacing
   },
   config: {
     initialColorMode: "dark",

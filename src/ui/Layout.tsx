@@ -10,7 +10,7 @@ function Layout() {
     setIsSidebarOpen((value) => !value);
   };
   return (
-    <Flex bg="gray.100">
+    <Flex bg="gray.50">
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
       <Header />
       <Flex marginTop={95} marginLeft={5} marginRight={15} width="100%">

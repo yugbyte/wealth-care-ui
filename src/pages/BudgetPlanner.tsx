@@ -5,7 +5,9 @@ import Content from "../ui/Content";
 function BudgetPlanner() {
   return (
     <Flex flexDirection={"column"}>
-      <Heading>Budget Planner</Heading>
+      <Heading letterSpacing="wider" color="brand.800" fontWeight="bold">
+        Budget Planner
+      </Heading>
       <Content>
         <BudgetDetails />
       </Content>

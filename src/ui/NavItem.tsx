@@ -28,7 +28,7 @@ function NavItem({
       textDecoration="none"
       marginLeft={isCollapsed ? 15 : 0}
       borderRight={!isActive ? "none" : "solid 8px"}
-      borderRightColor={!isActive ? "gray.600" : "primary.500"}
+      borderRightColor={!isActive ? "gray.600" : "brand.500"}
     >
       <Flex
         alignItems="center"
@@ -39,7 +39,7 @@ function NavItem({
           as={icon}
           fontSize={24}
           mr="2"
-          color={!isActive ? "gray.500" : "primary.500"}
+          color={!isActive ? "gray.500" : "brand.500"}
         />
 
         <Text
