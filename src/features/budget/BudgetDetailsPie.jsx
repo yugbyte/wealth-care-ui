@@ -41,7 +41,7 @@ function BudgetDetailsPie() {
                 cy="50%"
                 labelLine={false}
                 outerRadius={150}
-                fill="#8884d8"
+                innerRadius={100}
                 dataKey="value"
               >
                 {data.map((entry, index) => (

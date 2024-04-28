@@ -1,10 +1,5 @@
 import { Flex, VStack } from "@chakra-ui/react";
-import {
-  MdAccountCircle,
-  MdHome,
-  MdOutlineEventNote,
-  MdSettings,
-} from "react-icons/md";
+import { MdOutlineEventNote, MdSettings } from "react-icons/md";
 import NavItem from "./NavItem";
 import SidebarToggle from "./SidebarToggle";
 import Logo from "./Logo";
@@ -27,8 +22,10 @@ function Sidebar({
       flexDirection="column"
       justifyContent="space-between"
       zIndex="1000"
+      borderStart="solid"
+      borderColor="gray-100"
       transition="width 0.3s ease-in-out"
-      boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
+      boxShadow="0px 0px 25px rgba(0, 0, 0, 0.1)"
     >
       <div>
         <Logo isCollapsed={!isOpen} />
