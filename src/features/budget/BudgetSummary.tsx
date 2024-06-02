@@ -1,10 +1,22 @@
 import { Card, Flex, GridItem, Text } from "@chakra-ui/react";
 import Currency from "../../ui/Currency";
 
-function BudgetSummary() {
+function BudgetSummary({
+  totalBudgetAmount,
+  currency,
+}: {
+  totalBudgetAmount: number;
+  currency: string;
+}) {
   return (
     <GridItem colSpan={6}>
-      <Card minWidth="100%" minHeight="50px" maxHeight={"150px"}>
+      <Card
+        minWidth="100%"
+        minHeight="50px"
+        maxHeight={"150px"}
+        bg={"layoutPrimary.700"}
+        color={"brandLight.800"}
+      >
         <Flex
           fontWeight="bold"
           fontSize="28"
@@ -16,8 +28,8 @@ function BudgetSummary() {
           <Currency
             fontSize="28"
             fontWeight="bold"
-            currency={"USD"}
-            amount={1000}
+            currency={currency}
+            amount={totalBudgetAmount}
           ></Currency>
         </Flex>
       </Card>

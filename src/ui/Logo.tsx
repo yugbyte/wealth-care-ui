@@ -5,16 +5,16 @@ function Logo({ isCollapsed }: { isCollapsed: boolean }) {
   return (
     <Center w="full" marginBottom={25}>
       <Flex flexDirection="column">
-        <Center fontSize={isCollapsed ? 50 : 100} color="brand.600">
+        <Center fontSize={isCollapsed ? 80 : 100} color="brandLight.600">
           <MdDiamond />
         </Center>
 
         {!isCollapsed && (
           <Text
             fontFamily={"Caveat"}
-            fontSize={35}
+            fontSize={39}
             fontWeight={800}
-            color="brand.500"
+            color="brandLight.500"
           >
             Wealth Care
           </Text>

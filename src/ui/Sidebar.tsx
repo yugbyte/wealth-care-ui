@@ -16,9 +16,9 @@ function Sidebar({
   return (
     <Flex
       bg="layout.0"
-      w={isOpen ? "350px" : "70px"}
+      w={isOpen ? "350px" : "95px"}
       minH="100vh"
-      p="4"
+      backgroundColor="layoutLight.0"
       flexDirection="column"
       justifyContent="space-between"
       zIndex="1000"

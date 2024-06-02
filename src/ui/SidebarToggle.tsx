@@ -34,7 +34,7 @@ function SidebarToggle({
             display={"block"}
             fontSize={"20"}
             size="8xl"
-            color="brand.400"
+            color="brandLight.400"
             aria-label="Toggle Sidebar"
             icon={<TbLayoutSidebarLeftCollapseFilled />}
             variant="ghost"

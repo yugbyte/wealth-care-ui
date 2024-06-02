@@ -3,7 +3,7 @@ import { buttonTheme } from "./ButtonTheme";
 
 const theme = extendTheme({
   colors: {
-    brand: {
+    brandLight: {
       100: "#E9E3FF",
       200: "#422AFB",
       300: "#422AFB",
@@ -14,9 +14,10 @@ const theme = extendTheme({
       800: "#190793",
       900: "#11047A",
     },
-    layout: {
+    layoutLight: {
       0: "#fff",
       100: "RGBA(0, 0, 0, 0.06)",
+      200: "#f1f1f1",
     },
     primary: {
       50: "#F0F5FF",
@@ -68,12 +69,12 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    body: "DM Sans, sans-serif",
-    heading: "Poppins, sans-serif",
+    body: "Karla, sans-serif",
+    heading: "Karla, sans-serif",
   },
   fontWeights: {
     logo: 800,
-    normal: 300, // Default font weight
+    normal: 400, // Default font weight
     medium: 500, // Medium font weight
     bold: 700, // Bold font weight
   },

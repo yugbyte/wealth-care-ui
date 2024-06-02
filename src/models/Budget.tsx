@@ -1,8 +1,7 @@
 interface Budget {
   id: string;
-  category: string;
+  name: string;
   currency: string;
-  amount: number;
   tags: string[];
-  isRecurring: boolean;
+  budgetExpenseItems: BudgetItem[];
 }

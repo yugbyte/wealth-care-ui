@@ -2,12 +2,19 @@ import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
 const pill = defineStyle({
   borderRadius: "full",
-  background: "brand.900",
-  fontWeight: "400",
+  background: "brandLight.900",
+  fontWeight: "500",
   color: "white",
-  _hover: { background: "brand.300" },
+  _hover: { background: "brandLight.300" },
+});
+
+const icon = defineStyle({
+  background: "brandLight.900",
+  fontWeight: "500",
+  color: "white",
+  _hover: { background: "brandLight.300" },
 });
 
 export const buttonTheme = defineStyleConfig({
-  variants: { pill },
+  variants: { pill, icon },
 });

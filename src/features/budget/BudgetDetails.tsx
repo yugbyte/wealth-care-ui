@@ -5,81 +5,92 @@ import {
   CardFooter,
   CardHeader,
   Flex,
-  GridItem,
   Heading,
+  Icon,
   Spacer,
+  Spinner,
   Stack,
   StackDivider,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { MdOutlineLocalGroceryStore, MdOutlinePostAdd } from "react-icons/md";
 import BudgetItemDetail from "./BudgetItemDetail";
-import { IoSchool } from "react-icons/io5";
-import { FaCarAlt } from "react-icons/fa";
+import { MdOutlinePostAdd } from "react-icons/md";
+import { getIconByName } from "../../util/IconMap";
+import AddBudgetItem from "./AddBudgetItem";
 
-function BudgetDetails() {
+function BudgetDetails({
+  isLoading,
+  budget,
+}: {
+  isLoading: boolean;
+  budget: Budget;
+}) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <GridItem colSpan={3}>
-      <Card minWidth="100%" minHeight="60vh" maxHeight={"60vh"}>
+    <>
+      <Card
+        minWidth="100%"
+        minHeight="65vh"
+        maxHeight={"65vh"}
+        bg={"layoutPrimary.700"}
+        color={"brandLight.700"}
+      >
         <CardHeader>
           <Flex fontWeight="bold" fontSize="18" width="100%">
             <Heading
               size="md"
+              color="brandLight.800"
               textTransform="uppercase"
-              fontWeight="medium"
+              fontWeight="bold"
               letterSpacing="normal"
             >
-              Budget 2024
+              {budget !== undefined ? budget.name : ""}
             </Heading>
             <Spacer />
           </Flex>
         </CardHeader>
-        <CardBody overflowY="auto">
-          <Stack divider={<StackDivider />} spacing="10">
-            <BudgetItemDetail
-              budget={{
-                id: "1",
-                amount: 200,
-                category: "Grocery",
-                currency: "USD",
-                tags: ["fish", "meat", "grocery"],
-                isRecurring: false,
-              }}
-              icon={<MdOutlineLocalGroceryStore />}
-            />
-            <BudgetItemDetail
-              budget={{
-                id: "2",
-                amount: 800,
-                category: "School Fees",
-                currency: "USD",
-                tags: ["fees", "education"],
-                isRecurring: false,
-              }}
-              icon={<IoSchool />}
-            />
-            <BudgetItemDetail
-              budget={{
-                id: "3",
-                amount: 500,
-                category: "Car Payment",
-                currency: "USD",
-                tags: ["emi", "loan"],
-                isRecurring: true,
-              }}
-              icon={<FaCarAlt />}
-            />
-            <BudgetItemDetail
-              budget={{
-                id: "4",
-                amount: 500,
-                category: "Car Payment",
-                currency: "USD",
-                tags: ["emi", "loan"],
-                isRecurring: true,
-              }}
-              icon={<FaCarAlt />}
-            />
-          </Stack>
+        <CardBody
+          overflowY="auto"
+          sx={{
+            "::-webkit-scrollbar": {
+              width: "8px",
+            },
+
+            "::-webkit-scrollbar-thumb": {
+              background: "brandLight.600",
+              borderRadius: "24px",
+            },
+          }}
+        >
+          {isLoading || budget === undefined ? (
+            <Flex
+              minHeight="50vh"
+              maxHeight={"50vh"}
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Spinner color="brandLight.500" thickness="8px" />
+            </Flex>
+          ) : (
+            <Stack divider={<StackDivider />} spacing="5" justify="center">
+              {budget.budgetExpenseItems.map((item) => (
+                <BudgetItemDetail
+                  key={item.id}
+                  budgetItem={{
+                    id: item.id,
+                    expenseName: item.expenseName,
+                    budgetAmount: item.budgetAmount,
+                    category: item.category,
+                    icon: item.icon,
+                    tags: item.tags,
+                    isRecurring: item.isRecurring,
+                  }}
+                  currency={budget.currency}
+                  icon={<Icon as={getIconByName(item.icon)} />}
+                />
+              ))}
+            </Stack>
+          )}
         </CardBody>
         <CardFooter>
           <Flex width={"100%"} justifyContent="flex-end">
@@ -87,13 +98,15 @@ function BudgetDetails() {
               aria-label="add-entry"
               variant="pill"
               leftIcon={<MdOutlinePostAdd />}
+              onClick={onOpen}
             >
               Add Entry
             </Button>
           </Flex>
         </CardFooter>
       </Card>
-    </GridItem>
+      {isOpen && <AddBudgetItem onClose={onClose} isOpen={isOpen} />}
+    </>
   );
 }
 
