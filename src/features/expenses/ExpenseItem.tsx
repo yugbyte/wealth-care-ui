@@ -9,6 +9,7 @@ import {
   IconButton,
   Spacer,
   Stack,
+  Tag,
   Text,
   Tooltip,
   Wrap,
@@ -83,6 +84,24 @@ function ExpenseItem() {
                 08/08/2023
               </Text>
             </WrapItem>
+            <HStack spacing={4}>
+              <Tag
+                size="sm"
+                key=""
+                variant="solid"
+                backgroundColor={"grey.300"}
+              >
+                Netflix
+              </Tag>
+              <Tag
+                size="sm"
+                key=""
+                variant="solid"
+                backgroundColor={"grey.300"}
+              >
+                Online
+              </Tag>
+            </HStack>
           </Stack>
         </Box>
       </Flex>
