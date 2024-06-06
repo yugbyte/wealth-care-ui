@@ -77,6 +77,7 @@ const theme = extendTheme({
     normal: 400, // Default font weight
     medium: 500, // Medium font weight
     bold: 700, // Bold font weight
+    xbold: 900, // Bold font weight
   },
   letterSpacings: {
     tighter: "-0.05em", // Tighter letter spacing
